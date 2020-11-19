@@ -23,8 +23,8 @@
         }
 
         &:hover {
-          background-color: $colorCalendarHover;
           position: relative;
+          background-color: $colorCalendarHover;
           animation-name: jump;
           animation-duration: 500ms;
         }
