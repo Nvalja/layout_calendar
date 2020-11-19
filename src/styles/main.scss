@@ -2,3 +2,9 @@
 @import "normalize";
 @import "variables";
 @import "calendar";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
