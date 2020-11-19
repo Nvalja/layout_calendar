@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   width: $widthBlock;
-  background-color: yellow;
 }
 
 @each $var in (28, 29, 30, 31) {
