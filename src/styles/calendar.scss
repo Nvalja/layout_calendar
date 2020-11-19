@@ -1,6 +1,7 @@
 .calendar {
   display: flex;
   flex-wrap: wrap;
+  gap: 1px;
   width: $widthBlock;
 }
 
@@ -14,7 +15,6 @@
         flex: 0 0 auto;
         height: 100px;
         width: $widthElement;
-        margin: 1px;
         background-color: $colorCalendar;
         border: 1px solid black;
 
