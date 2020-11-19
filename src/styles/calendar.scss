@@ -1,0 +1,51 @@
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  width: $widthBlock;
+}
+
+@each $var in (28, 29, 30, 31) {
+  .calendar-#{$var} {
+    @for $i from 1 through $var {
+      div:nth-child(#{$i}) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+        height: 100px;
+        width: $widthElement;
+        margin: 1px;
+        background-color: $colorCalendar;
+        border: 1px solid black;
+
+        &:after {
+          content: "#{$i}";
+        }
+
+        &:hover {
+          background-color: $colorCalendarHover;
+          position: relative;
+          animation-name: jump;
+          animation-duration: 500ms;
+        }
+
+        @keyframes jump {
+          from {
+            bottom: 0;
+          }
+          to {
+            bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $day, $num in $list {
+  .calendar-#{$day} {
+    div:first-child {
+      margin-left: #{$num * $firstElement};
+    }
+  }
+}
