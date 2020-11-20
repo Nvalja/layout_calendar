@@ -2,40 +2,33 @@
   display: flex;
   flex-wrap: wrap;
   width: $widthBlock;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 100px;
+    margin: 0 1px 1px 0;
+    width: $widthElement;
+    transition: transform 500ms, background-color 500ms;
+  }
 }
 
 @each $var in (28, 29, 30, 31) {
   .calendar-#{$var} {
     @for $i from 1 through $var {
       div:nth-child(#{$i}) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 0 0 auto;
-        height: 100px;
-        margin: 0 1px 1px 0;
-        width: $widthElement;
         background-color: $colorCalendar;
         border: 1px solid black;
-
         &:after {
           content: "#{$i}";
         }
 
         &:hover {
-          position: relative;
           background-color: $colorCalendarHover;
-          animation-name: jump;
-          animation-duration: 500ms;
-        }
-
-        @keyframes jump {
-          from {
-            bottom: 0;
-          }
-          to {
-            bottom: 20px;
-          }
+          transform: translateY(-20px);
+          
         }
       }
     }
